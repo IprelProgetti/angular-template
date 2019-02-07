@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs';
-import * as io from 'socket.io-client';
+import { DataInjectionService } from '../data-injection.service';
 
 @Component({
   selector: 'app-live-hist',
@@ -17,25 +16,11 @@ export class LiveHistComponent implements OnInit, OnDestroy {
   dataFormat: string = "json";
   dataSource: any;
 
-  private topic = "Mix";
-  private url = 'http://localhost:8091';
-  private socket: any;
-  private dataSourceConnection: any;
+  private dataStream: any;
 
-  private dataStreamSource = function getLiveDataSource() {
-    let observable = new Observable(observer => {
-      this.socket = io(this.url);
-      this.socket.on(this.topic, (data) => {
-        observer.next(data);
-      });
-      return () => {
-        this.socket.disconnect();
-      }
-    })
-    return observable;
-  }
-
-  constructor() {
+  constructor(
+    private dataInjection: DataInjectionService
+  ) {
     // Initialize dataSource
     this.dataSource = {
       chart: { 
@@ -57,13 +42,9 @@ export class LiveHistComponent implements OnInit, OnDestroy {
    }
 
   ngOnInit() {
-    this.dataSourceConnection = this.dataStreamSource().subscribe((msg: any) => {
-      // Get data from websocket
-      // Populate graph
-      // TODO: use websocket as dataSource
+    this.dataStream = this.dataInjection.data.subscribe((msg: any) => {
       var content = JSON.parse(msg.y);
 
-      // console.log("new production: "+ key + " "+ val);
       this.dataSource.data[0].value = parseFloat(content[Object.keys(content)[0]]);
       this.dataSource.data[1].value = parseFloat(content[Object.keys(content)[1]]);
       this.dataSource.data[2].value = parseFloat(content[Object.keys(content)[2]]);
@@ -73,7 +54,7 @@ export class LiveHistComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    this.dataSourceConnection.unsubscribe();
+    this.dataStream.unsubscribe();
   }
 
 }
