@@ -44,12 +44,12 @@ export class LiveHistComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.dataStream = this.dataInjection.data.subscribe((msg: any) => {
       var content = JSON.parse(msg.y);
-
-      this.dataSource.data[0].value = parseFloat(content[Object.keys(content)[0]]);
-      this.dataSource.data[1].value = parseFloat(content[Object.keys(content)[1]]);
-      this.dataSource.data[2].value = parseFloat(content[Object.keys(content)[2]]);
-      this.dataSource.data[3].value = parseFloat(content[Object.keys(content)[3]]);
-      this.dataSource.data[4].value = parseFloat(content[Object.keys(content)[4]]);
+      console.log(content);
+      this.dataSource.data[0].value = parseFloat(content[Object.keys(content)[1]]);
+      this.dataSource.data[1].value = parseFloat(content[Object.keys(content)[2]]);
+      this.dataSource.data[2].value = parseFloat(content[Object.keys(content)[3]]);
+      this.dataSource.data[3].value = parseFloat(content[Object.keys(content)[4]]);
+      this.dataSource.data[4].value = parseFloat(content[Object.keys(content)[5]]);
     })
   }
 

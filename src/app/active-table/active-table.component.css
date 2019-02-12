@@ -1,0 +1,15 @@
+.example-container {
+    height: 400px;
+    overflow: auto;
+  }
+.mat-paginator-sticky {
+    bottom: 0px;
+    position: sticky;
+    z-index: 10;
+}
+table {
+    width: 100%;
+}
+.mat-column-select {
+    overflow: initial;
+  }

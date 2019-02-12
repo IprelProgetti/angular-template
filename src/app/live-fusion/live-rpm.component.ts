@@ -15,7 +15,7 @@ export class LiveRpmComponent implements OnInit, OnDestroy {
 
   dataFormat: string = "json";
   dataSource: any;
-  whoAmI: string = "RPM";
+  whoAmI: string = "rpm";
 
   private dataStream: any;
 

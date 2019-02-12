@@ -15,7 +15,7 @@ export class LiveAcquaComponent implements OnInit, OnDestroy {
 
   dataFormat: string = "json";
   dataSource: any;
-  whoAmI: string = "PressioneAcqua";
+  whoAmI: string = "pressioneAcqua";
 
   private dataStream: any;
 

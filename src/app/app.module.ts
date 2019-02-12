@@ -9,8 +9,19 @@ import {
   MatSidenavModule, 
   MatIconModule, 
   MatListModule,
-  MatTabsModule 
+  MatTabsModule,
+  MatSortModule,
+  MatPaginatorModule,
+  MatTableModule,
+  MatInputModule,
+  MatGridListModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatFormFieldModule,
+  MatSelectModule
 } from '@angular/material';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FusionChartsModule } from 'angular-fusioncharts';
 
@@ -47,7 +58,11 @@ import { LiveTempComponent } from './live-fusion/live-temp.component';
 import { LiveAcquaComponent } from './live-fusion/live-acqua.component';
 import { LiveAriaComponent } from './live-fusion/live-aria.component';
 import { LiveCaldaiaComponent } from './live-fusion/live-caldaia.component';
-import { DataInjectionService } from './data-injection.service'
+import { DataInjectionService } from './data-injection.service';
+import { ActiveTableComponent } from './active-table/active-table.component'
+import { HttpClientModule } from '@angular/common/http';
+import { NumericFilterComponent } from './numeric-filter/numeric-filter.component';
+import { DateTimeComponent } from './date-time/date-time.component';
 
 const appRoutes: Routes = [
   { path: '', component: PresenteComponent, data: { title: 'Live Dati' } },
@@ -69,18 +84,33 @@ const appRoutes: Routes = [
     LiveAcquaComponent,
     LiveAriaComponent,
     LiveCaldaiaComponent,
+    ActiveTableComponent,
+    NumericFilterComponent,
+    DateTimeComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatButtonModule, 
     MatCheckboxModule, 
+    MatSelectModule,
     LayoutModule, 
     MatToolbarModule, 
     MatSidenavModule, 
     MatIconModule, 
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatListModule,
     MatTabsModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatInputModule,
+    MatGridListModule,
+    FormsModule, 
+    ReactiveFormsModule,
     FusionChartsModule,
     RouterModule.forRoot(
       appRoutes,

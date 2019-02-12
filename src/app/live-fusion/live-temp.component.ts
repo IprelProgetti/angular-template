@@ -15,7 +15,7 @@ export class LiveTempComponent implements OnInit, OnDestroy {
 
   dataFormat: string = "json";
   dataSource: any;
-  whoAmI: string = "Temperatura";
+  whoAmI: string = "temperatura";
 
   private dataStream: any;
 

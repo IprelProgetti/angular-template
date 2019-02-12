@@ -15,7 +15,7 @@ export class LiveCaldaiaComponent implements OnInit, OnDestroy {
 
   dataFormat: string = "json";
   dataSource: any;
-  whoAmI: string = "PressioneCaldaia";
+  whoAmI: string = "pressioneCaldaia";
 
   private dataStream: any;
 

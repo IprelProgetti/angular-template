@@ -15,7 +15,7 @@ export class LiveAriaComponent implements OnInit, OnDestroy {
 
   dataFormat: string = "json";
   dataSource: any;
-  whoAmI: string = "PressostatoAria";
+  whoAmI: string = "pressostatoAria";
 
   private dataStream: any;
 
