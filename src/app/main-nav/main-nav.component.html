@@ -6,9 +6,18 @@
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list (click)="togglePanel()">
     <!-- <mat-nav-list> -->
-      <a mat-list-item href='#passato'>Storico Dati</a>
-      <a mat-list-item href='#presente'>Live Dati</a>
-      <a mat-list-item href='#futuro'>Manutenzioni Future</a>
+      <a mat-list-item href='#link1'>
+        <mat-icon aria-label="Side nav toggle icon">backup</mat-icon>
+        &nbsp;Link 1
+      </a>
+      <a mat-list-item href='#link2'>
+        <mat-icon aria-label="Side nav toggle icon">dashboard</mat-icon>
+        &nbsp;Link 2
+      </a>
+      <a mat-list-item href='#link3'>
+        <mat-icon aria-label="Side nav toggle icon">fingerprint</mat-icon>
+        &nbsp;Link 3
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,7 +30,22 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>RoboDemo</span>
+      <span>angular-template</span>
+      <span class="example-fill-remaining-space"></span>
+      <span class="titlelinks">
+        <a mat-list-item href='#link1'>
+          <!-- <mat-icon aria-label="Side nav toggle icon">backup</mat-icon> -->
+          Link 1
+        </a>
+        <a mat-list-item href='#link2'>
+          <!-- <mat-icon aria-label="Side nav toggle icon">dashboard</mat-icon> -->
+          Link 2
+        </a>
+        <a mat-list-item href='#link3'>
+          <!-- <mat-icon aria-label="Side nav toggle icon">fingerprint</mat-icon> -->
+          Link 3
+        </a>
+      </span>
     </mat-toolbar>
     <!-- Add Content Here -->
     <ng-content> </ng-content>

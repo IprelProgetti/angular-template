@@ -23,6 +23,8 @@
     "@angular/router": "~7.2.0",
     "angular-fusioncharts": "^3.0.1",
     "core-js": "^2.5.4",
+    "devextreme": "^18.2.6",
+    "devextreme-angular": "^18.2.6",
     "fusioncharts": "^3.13.3-sr.1",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.3.3",

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PassatoComponent } from './passato.component';
+import { LinkThreeComponent } from './linkthree.component';
 
-describe('PassatoComponent', () => {
-  let component: PassatoComponent;
-  let fixture: ComponentFixture<PassatoComponent>;
+describe('LinkThreeComponent', () => {
+  let component: LinkThreeComponent;
+  let fixture: ComponentFixture<LinkThreeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PassatoComponent ]
+      declarations: [ LinkThreeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PassatoComponent);
+    fixture = TestBed.createComponent(LinkThreeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

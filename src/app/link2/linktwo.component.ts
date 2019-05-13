@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-presente',
-  templateUrl: './presente.component.html',
-  styleUrls: ['./presente.component.css']
+  templateUrl: './linktwo.component.html',
+  styleUrls: ['./linktwo.component.css']
 })
-export class PresenteComponent implements OnInit {
+export class LinkTwoComponent implements OnInit {
 
   constructor() { }
 
